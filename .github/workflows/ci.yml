@@ -1,0 +1,15 @@
+name: CI
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: nickelc/actions/setup-build-env@master
+        with:
+          toolchain: nightly
+
+      - run: cargo new self-test
+      - run: cargo build --manifest-path self-test/Cargo.toml
