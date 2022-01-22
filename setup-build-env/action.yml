@@ -25,5 +25,9 @@ runs:
         profile: minimal
         override: true
 
+    - name: Add problem matchers
+      shell: bash
+      run: echo "::add-matcher::setup-build-env/rust.json"
+
     - name: Cache
       uses: Swatinem/rust-cache@v1
