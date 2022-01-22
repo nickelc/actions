@@ -12,4 +12,5 @@ jobs:
           toolchain: nightly
 
       - run: cargo new self-test
+      - run: echo "fn unused() {}" >> self-test/src/main.rs
       - run: cargo build --manifest-path self-test/Cargo.toml
